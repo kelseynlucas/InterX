@@ -84,6 +84,9 @@ InterX Intersection of curves
 
 def InterX(L1x,L1y,L2x=None,L2y=None):
     
+    import pandas as pd
+    import numpy as np
+    
     #Check to see if second curve exists.  If not, set up as identical to first curve.
     if L2x is None:
         L2x = L1x
