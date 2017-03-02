@@ -105,13 +105,13 @@ def InterX(L1x,L1y,L2x=None,L2y=None):
         L2x = np.mat(L2x.as_matrix()).transpose()
         L2y = np.mat(L2y.as_matrix()).transpose()
     
-    #set up curve 1 as row-vectors
-    L1x = np.mat(L1x.as_matrix()).transpose()
-    L1y = np.mat(L1y.as_matrix()).transpose()
+    #set up curve 1 as column-vectors
+    L1x = np.mat(L1x.as_matrix())
+    L1y = np.mat(L1y.as_matrix())
     
     #combine x and y for each curve to one master matrix.  Curve 1 is column-vectors, curve 2 is row-vectors
     L1 = np.hstack([L1x,L1y])
-    L2 = np.hstack([L2x,L2y]).transpose()
+    L2 = np.vstack([L2x,L2y])
     
     #break back to x and y values (to match naming conventions from Matlab version)
     #curve 1 is column-vectors, curve 2 is row-vectors
